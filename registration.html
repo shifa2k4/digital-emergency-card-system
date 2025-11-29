@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration-ResQMe</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>ResQMe </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+<style>
+  h3 {
+  color: #6a11cb;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-image: url(reg.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 100px; /* offset for navbar */
+}
+.paged-title {
+  text-align: center;
+  padding: 12px 0 20px 0;
+}
+
+.paged-title .breadcrumbs {
+  margin-bottom: 1.5rem;
+}
+
+.paged-title .breadcrumbs .breadcrumb {
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.paged-title .breadcrumbs .breadcrumb .breadcrumb-item {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.paged-title .breadcrumbs .breadcrumb .breadcrumb-item.active {
+  color: rgba(240, 248, 255, 0.885);
+}
+
+.paged-title .breadcrumbs .breadcrumb .breadcrumb-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.paged-title .breadcrumbs .breadcrumb .breadcrumb-item a:hover {
+  color: rgb(235, 179, 249);
+}
+
+.paged-title .breadcrumbs .breadcrumb .breadcrumb-item a i {
+  font-size: 0.9rem;
+  margin-right: 0.2rem;
+}
+
+.paged-title .breadcrumbs .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+/* Registration container (custom) */
+/* Registration container (custom) */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;  /* move to right */
+  align-items: flex-start;    /* move to top */
+  padding-right: 110px;       /* space from right edge */
+  padding-top: 1px;          /* space from top */
+}
+
+.form-group {
+  color: #6a11cb;
+}
+
+.form-control,
+.form-select {
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  font-weight: bold;
+  border-radius: 14px;
+  background: linear-gradient(to right, #710be1a8, #6a11cb);
+  color: #ffffff;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: fade-in effect for the form card */
+.card {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div
+      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+         <img src="barcode_8399707.png" alt="barcode">
+        <!---<svg class="my-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">--->
+          <g id="bgCarrier" stroke-width="0"></g>
+          <g id="tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="iconCarrier">
+            <path d="M22 22L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path
+              d="M17 22V6C17 4.11438 17 3.17157 16.4142 2.58579C15.8284 2 14.8856 2 13 2H11C9.11438 2 8.17157 2 7.58579 2.58579C7 3.17157 7 4.11438 7 6V22"
+              stroke="currentColor" stroke-width="1.5"></path>
+            <path opacity="0.5"
+              d="M21 22V8.5C21 7.09554 21 6.39331 20.6629 5.88886C20.517 5.67048 20.3295 5.48298 20.1111 5.33706C19.6067 5 18.9045 5 17.5 5"
+              stroke="currentColor" stroke-width="1.5"></path>
+            <path opacity="0.5"
+              d="M3 22V8.5C3 7.09554 3 6.39331 3.33706 5.88886C3.48298 5.67048 3.67048 5.48298 3.88886 5.33706C4.39331 5 5.09554 5 6.5 5"
+              stroke="currentColor" stroke-width="1.5"></path>
+            <path d="M12 22V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M10 12H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M5.5 11H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M5.5 14H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M17 11H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M17 14H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M5.5 8H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M17 8H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M10 15H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M12 9V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+            <path d="M14 7L10 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </g>
+        </svg>
+
+        <h1 class="sitename">Res<span class="highlight-Q">Q</span>Me</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- <li><a href="departments.html">Departments</a></li> -->
+          <li><a href="services.html">Services</a></li>
+          <li><a href="TeamMembers.html" >Team</a></li>
+          <li><a href="registration.html" class="active">Register</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>Help & Info</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+               <ul>
+                  <li><a href="faq.html">FAQ</a></li>
+                  <li><a href="testimonials.html">Testimonials</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Policies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+               <ul>
+                  <li><a href="terms.html">Terms & Conditions</a></li>
+                  <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+              </li>
+               <li class="dropdown"><a href="#"><span>Support</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+               <ul>
+                  <li><a href="feedback2.html">Feedback</a></li>
+                  <li><a href="report.html">Report an Issue</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+         
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+         <a class="btn-getstarted" href="logiin.html">Login</a>
+    </div>
+  </header>
+ <!-- Page Title -->
+    <div class="paged-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="bi bi-house"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Category</a></li>
+            <li class="breadcrumb-item active current">Register</li>
+          </ol>
+        </nav>
+      </div>
+    </div> 
+    
+<div class="register-container">
+  <div class="card shadow p-4" style="width: 400px;">
+
+    <h3 class="text-center mb-4">Registration Form</h3>
+
+    <form action="reg.php" method="POST">
+      
+      <div class="form-group">
+        <label for="name">Username:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" name="phone" required
+         pattern="[6-9][0-9]{9}"
+         minlength="10" maxlength="10">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cpsw">Confirm Password:</label>
+        <input type="password" class="form-control" id="cpsw" placeholder="Confirm password" name="cpsw" required>
+      </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit">Register</button>
+      </form>
+    </div>
+  </div>
+<!-- Javascript files-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>

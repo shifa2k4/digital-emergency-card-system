@@ -1,2 +1,6 @@
-The .scss (Sass) files are only available in the pro version.
-You can buy it from: https://bootstrapmade.com/meditrust-bootstrap-hospital-website-template/
+Thanks for downloading this template!
+
+Template Name: MediTrust
+Template URL: https://bootstrapmade.com/meditrust-bootstrap-hospital-website-template/
+Author: BootstrapMade.com
+License: https://bootstrapmade.com/license/
