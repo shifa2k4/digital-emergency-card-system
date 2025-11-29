@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Users</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #eef2f3, #d9e4f5);
+      font-family: "Segoe UI", sans-serif;
+      background-image:url(bgr.jpg) ;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+    }
+    .img{
+      width: 10px;
+      height: 10px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      height: 100vh;
+      background: linear-gradient(180deg, #0a3d62, #1e5799);
+      color: white;
+      padding-top: 20px;
+      position: fixed;
+      width: 250px;
+      overflow-y: auto;
+      box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+      top: 56px;
+    }
+
+    .sidebar h4 {
+      font-weight: bold;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 10px 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .sidebar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(5px);
+    }
+
+    /* Content */
+    .content-wrapper {
+      margin-left: 250px;
+      padding: 30px;
+      margin-top: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 0.7s ease-in-out;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-header h2 {
+      font-weight: bold;
+      color: #0a3d62;
+    }
+
+    /* Profile Photo */
+    .profile-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0a3d62;
+    }
+
+    .edit-icon {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      background: #0a3d62;
+      color: white;
+      border-radius: 50%;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #file-upload {
+      display: none;
+    }
+
+    /* Buttons */
+    .btn-submit {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      display: block;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 114, 255, 0.25);
+    }
+
+    /* Fade Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg shadow-sm fixed-top px-3"
+    style="background: linear-gradient(90deg, #0a3d62, #1e5799);">
+    <div class="container-fluid">
+      <span class="navbar-brand d-flex align-items-center text-white fw-bold fs-5">
+        <i class="bi bi-shield-lock-fill me-2"></i>
+        <span>Welcome, Admin</span>
+      </span>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+    <div class="sidebar">
+    <h4 class="text-center mb-4">🚑 Emergency Card</h4>
+    <a href="admin dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a class="dropdown-toggle" data-bs-toggle="collapse" href="#usersMenu" role="button">
+      <i class="bi bi-people"></i> User Management
+    </a>
+    <div class="collapse ps-4" id="usersMenu">
+      <a href="adduser.html">Add User</a>
+      <a href="manageuser.html">Manage User</a>
+    </div>
+    <a class="dropdown-toggle" data-bs-toggle="collapse" href="#emergencyMenu" role="button">
+      <i class="bi bi-heart-pulse"></i> Emergency Details
+    </a>
+    <div class="collapse ps-4" id="emergencyMenu">
+      <a href="emergency dm.html">Add Details</a>
+      <a href="managedetail.html">Manage Details</a>
+    </div>
+    <a class="dropdown-toggle" data-bs-toggle="collapse" href="#qrMenu" role="button">
+      <i class="bi bi-qr-code"></i> QR Codes
+    </a>
+    <div class="collapse ps-4" id="qrMenu">
+      <a href="#">Generated QR Codes</a>
+    </div>
+    <a class="dropdown-toggle" data-bs-toggle="collapse" href="#cardsMenu" role="button">
+      <i class="bi bi-card-image"></i> Digital Cards/Wallpapers
+    </a>
+    <div class="collapse ps-4" id="cardsMenu">
+      <a href="#">All Cards</a>
+      <a href="#">All Wallpapers</a>
+    </div>
+    <a class="dropdown-toggle" data-bs-toggle="collapse" href="#reportsMenu" role="button">
+      <i class="bi bi-flag"></i> Reports
+    </a>
+    <div class="collapse ps-4" id="reportsMenu">
+      <a href="#">Reported Cards</a>
+      <a href="#">Feedback</a>
+    </div>
+    <!-- <a href="#"><i class="bi bi-gear"></i> Settings</a> -->
+    <a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content-wrapper">
+    <div class="form-container">
+      <div class="form-header">
+        <h2><i class="bi bi-heart-pulse-fill text-danger"></i> Emergency Details</h2>
+      </div>
+
+      <!-- Profile Photo with Pen Icon -->
+      <div class="d-flex justify-content-center mb-3">
+        <div class="profile-wrapper">
+          <img src="https://via.placeholder.com/120" alt="Profile" class="profile-pic" id="preview">
+          <label for="file-upload" class="edit-icon"><i class="bi bi-pencil"></i></label>
+          <input id="file-upload" type="file" accept="image/*" onchange="previewImage(event)">
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form action="admin_eminsert.php" method="POST">
+  <!-- Full Name + DOB -->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Full Name</label>
+      <input type="text" class="form-control" name="fullname" placeholder="Enter full name" required>
+    </div>
+    <div class="col">
+      <label class="form-label">Date of Birth</label>
+      <input type="date" class="form-control" name="dob" required>
+    </div>
+  </div>
+
+  <!-- Blood Group + Phone -->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Blood Group</label>
+      <select class="form-select" name="bloodgroup" required>
+        <option value="">Select Blood Group</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+    </div>
+    <div class="col">
+      <label class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" name="phone" placeholder="Enter phone number" required>
+    </div>
+  </div>
+
+  <!-- Email + Emergency Contact -->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Email ID</label>
+      <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+    </div>
+    <div class="col">
+      <label class="form-label">Emergency Contact 1</label>
+      <input type="tel" class="form-control" name="emergency1" placeholder="Enter emergency contact" required>
+    </div>
+  </div>
+
+  <!-- More Contacts -->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Emergency Contact 2</label>
+      <input type="tel" class="form-control" name="emergency2" placeholder="Enter emergency contact">
+    </div>
+    <div class="col">
+      <label class="form-label">Emergency Contact 3</label>
+      <input type="tel" class="form-control" name="emergency3" placeholder="Enter emergency contact">
+    </div>
+  </div>
+
+  <!-- Allergies + Conditions -->
+  <div class="row mb-4">
+    <div class="col">
+      <label class="form-label">Allergies</label>
+      <input type="text" class="form-control" name="allergies" placeholder="e.g. Penicillin, Nuts">
+    </div>
+    <div class="col">
+      <label class="form-label">Medical Conditions</label>
+      <input type="text" class="form-control" name="conditions" placeholder="Enter medical conditions">
+    </div>
+  </div>
+
+  <button type="submit" class="btn-submit">DONE</button>
+</form>
+
+    </div>
+  </div>
+
+  <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const output = document.getElementById('preview');
+        output.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
