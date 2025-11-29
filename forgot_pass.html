@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+  <style>
+    body{
+        background-image: url(fpwd.png);
+        background-size:cover;
+        background-repeat: no-repeat;
+        padding:200px;
+        justify-content: center;
+      
+        
+    }
+    .forpass-container{
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        background: #eef0f3;
+        width:320px;
+        height: 290px;
+        animation: fadeIn 0.8s ease-in-out;
+        text-align: center;
+    }
+    h4{
+        color: #9534d6;;
+        font-size:28px;
+        margin-bottom: 10px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(to right, #d9c6e5, #9534d6);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    input{
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      margin-bottom: 20px;
+      outline: none;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    a{
+        text-align: center;
+        color: #9534d6;
+        display: block;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    p{
+        text-align: center;
+        font-size: 14px ;
+        margin-bottom: 20px;
+        color: rgb(66, 44, 44);
+    }
+    @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+  </head>
+  <body>
+    <div class="forpass-container">
+        <h4>Forgot password</h4>
+        <p>please enter your registered email/medical id to reset password</p>
+        <input type="text" placeholder="enter email/medical id...." required>
+        <button type="send reset link" class="btn-block">send reset link</button>
+        <a href="logiin.html">← back to login</a>
+    </div>
+    <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function(){
+        const output = document.getElementById('preview');
+        output.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+    </body>
+  </html>

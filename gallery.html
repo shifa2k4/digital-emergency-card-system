@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Gallery - MediTrust Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MediTrust
+  * Template URL: https://bootstrapmade.com/meditrust-bootstrap-hospital-website-template/
+  * Updated: Jul 04 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .qr-card-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.qr-card-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(160,100,255,0.5);
+}
+.qr-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.4s;
+}
+.qr-card-item:hover .qr-card-overlay {
+  opacity: 1;
+}
+.qr-card-overlay h5 {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.qr-card-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.qr-card-item.active {
+  outline: 3px solid #c084ff;
+  box-shadow: 0 0 40px rgba(192,132,255,0.8);
+}
+.qr-demo-card {
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  height: 180px;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.qr-demo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(160,100,255,0.5);
+}
+.qr-demo-card h4 {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.qr-demo-card p {
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
+.qr-demo-card .qr-img {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 70px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px;
+}
+.qr-demo-card {
+  border-radius: 16px;
+  padding: 25px;
+  text-align: left;
+  height: 200px;
+  width: 350px;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.qr-demo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(160,100,255,0.5);
+}
+.qr-demo-card h4 {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.qr-demo-card p {
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
+.qr-demo-card .qr-img {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 70px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px;
+}
+.qr-theme-slider {
+  padding-bottom: 60px;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: #c084ff;
+}
+.swiper-pagination-bullet-active {
+  background: #c084ff;
+}
+
+.wave-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #100d13;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.wave-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #07060b, #c084fc);
+  border-radius: 10px;
+  transform: translateX(-50%);
+  animation: underlineSlide 3s infinite alternate;
+}
+
+@keyframes underlineSlide {
+  0% { width: 40%; opacity: 0.8; }
+  100% { width: 80%; opacity: 1; }
+}
+
+
+  </style>
+</head>
+
+<body class="gallery-page">
+
+  
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+         <img src="barcode_8399707.png" alt=""> 
+        <!---<svg class="my-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">--->
+          <g id="bgCarrier" stroke-width="0"></g>
+          <g id="tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="iconCarrier">
+            <path d="M22 22L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M17 22V6C17 4.11438 17 3.17157 16.4142 2.58579C15.8284 2 14.8856 2 13 2H11C9.11438 2 8.17157 2 7.58579 2.58579C7 3.17157 7 4.11438 7 6V22" stroke="currentColor" stroke-width="1.5"></path>
+            <path opacity="0.5" d="M21 22V8.5C21 7.09554 21 6.39331 20.6629 5.88886C20.517 5.67048 20.3295 5.48298 20.1111 5.33706C19.6067 5 18.9045 5 17.5 5" stroke="currentColor" stroke-width="1.5"></path>
+            <path opacity="0.5" d="M3 22V8.5C3 7.09554 3 6.39331 3.33706 5.88886C3.48298 5.67048 3.67048 5.48298 3.88886 5.33706C4.39331 5 5.09554 5 6.5 5" stroke="currentColor" stroke-width="1.5"></path>
+            <path d="M12 22V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M10 12H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M5.5 11H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M5.5 14H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M17 11H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M17 14H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M5.5 8H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M17 8H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path opacity="0.5" d="M10 15H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M12 9V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14 7L10 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+
+        <h1 class="sitename">Res<span class="highlight-Q">Q</span>Me</h1>
+      </a>
+
+       <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="userhome.php">Home</a></li>
+          <li><a href="about.html" >About</a></li>
+          <!-- <li><a href="departments.html">Departments</a></li> -->
+          <li><a href="services.html">Services</a></li>
+          <!-- <li><a href="TeamMembers.html" >Team</a></li> -->
+          <li><a href="registration.html">Register</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>Help & Info</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+               <ul>
+                  <li><a href="faq.html">FAQ</a></li>
+                  <li><a href="testimonials.html">Testimonials</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Policies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+               <ul>
+                  <li><a href="terms.html">Terms & Conditions</a></li>
+                  <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+              </li>
+               <li class="dropdown"><a href="#"><span>Support</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+               <ul>
+                  <li><a href="feedback2.html">Feedback</a></li>
+                  <li><a href="report.html">Report an Issue</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li> -->
+         
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+      <a class="btn-getstarted" href="index.html">Logout</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Category</a></li>
+            <li class="breadcrumb-item active current">Gallery</li>
+          </ol>
+        </nav>
+      </div>
+
+      
+
+    </section><!-- /Gallery Section -->
+    <!-- QR Card Themes Showcase -->
+<!-- QR Card Theme Showcase (Slider) -->
+<section id="qr-card-showcase" class="gallery section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="section-header text-center mb-5">
+      <h2 class="wave-title"> QR Card Theme Showcase</h2>
+
+      <p>See how your ResQMe card can shine in multiple themes — from professional dark to neon glow.</p>
+    </div>
+
+    <!-- Swiper Container -->
+    <div class="swiper qr-theme-slider">
+      <div class="swiper-wrapper">
+
+        <!-- Theme 1 -->
+        <div class="swiper-slide">
+          <div class="qr-demo-card" style="background: linear-gradient(135deg,#6a11cb,#2575fc); color:#fff;">
+            <h4>Gradient Glow</h4>
+            <p>📞 +91 98765 43210</p>
+            <p>🩸 O+</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=Gradient&size=80x80" class="qr-img" alt="">
+          </div>
+        </div>
+
+        <!-- Theme 2 -->
+        <div class="swiper-slide">
+          <div class="qr-demo-card" style="background: #fff; color:#000; border:1px solid #ccc;">
+            <h4>Minimal Light</h4>
+            <p>📞 +91 98765 43210</p>
+            <p>🩸 O+</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=Light&size=80x80" class="qr-img" alt="">
+          </div>
+        </div>
+
+        <!-- Theme 3 -->
+        <div class="swiper-slide">
+          <div class="qr-demo-card" style="background: linear-gradient(120deg,#111,#222); color:#fff;">
+            <h4>Dark Elegant</h4>
+            <p>📞 +91 98765 43210</p>
+            <p>🩸 O+</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=Dark&size=80x80" class="qr-img" alt="">
+          </div>
+        </div>
+
+        <!-- Theme 4 -->
+        <div class="swiper-slide">
+          <div class="qr-demo-card" style="background: radial-gradient(circle at top left,#00f,#111); color:#0ff;">
+            <h4>Neon Accent</h4>
+            <p>📞 +91 98765 43210</p>
+            <p>🩸 O+</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=Neon&size=80x80" class="qr-img" alt="">
+          </div>
+        </div>
+
+        <!-- Theme 5 -->
+        <div class="swiper-slide">
+          <div class="qr-demo-card" style="background: linear-gradient(135deg,#ff9966,#ff5e62); color:#fff;">
+            <h4>Sunset Blend</h4>
+            <p>📞 +91 98765 43210</p>
+            <p>🩸 O+</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=Sunset&size=80x80" class="qr-img" alt="">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<div class="title-wrapper">
+        <h1>Gallery</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+      </div>
+    </div><!-- End Page Title -->
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="gallery-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-nature">Nature</li>
+            <li data-filter=".filter-architecture">Architecture</li>
+            <li data-filter=".filter-people">People</li>
+            <li data-filter=".filter-travel">Travel</li>
+          </ul><!-- End Gallery Filters -->
+
+          <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-nature">
+              <div class="gallery-card">
+                <div class="gallery-img">
+                  <img src="assets/img/gallery/gallery-1.webp" class="img-fluid" alt="Gallery Image" loading="lazy">
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h4>Nature Exploration</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      <a href="assets/img/gallery/gallery-1.webp" class="glightbox gallery-link" data-gallery="gallery-images">
+                        <i class="bi bi-plus-circle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-architecture">
+              <div class="gallery-card">
+                <div class="gallery-img">
+                  <img src="assets/img/gallery/gallery-2.webp" class="img-fluid" alt="Gallery Image" loading="lazy">
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h4>Modern Architecture</h4>
+                      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                      <a href="assets/img/gallery/gallery-2.webp" class="glightbox gallery-link" data-gallery="gallery-images">
+                        <i class="bi bi-plus-circle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-people">
+              <div class="gallery-card">
+                <div class="gallery-img">
+                  <img src="assets/img/gallery/gallery-3.webp" class="img-fluid" alt="Gallery Image" loading="lazy">
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h4>Urban Life</h4>
+                      <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+                      <a href="assets/img/gallery/gallery-3.webp" class="glightbox gallery-link" data-gallery="gallery-images">
+                        <i class="bi bi-plus-circle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-travel">
+              <div class="gallery-card">
+                <div class="gallery-img">
+                  <img src="assets/img/gallery/gallery-4.webp" class="img-fluid" alt="Gallery Image" loading="lazy">
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h4>Travel Destinations</h4>
+                      <p>Aenean lacinia bibendum nulla sed consectetur.</p>
+                      <a href="assets/img/gallery/gallery-4.webp" class="glightbox gallery-link" data-gallery="gallery-images">
+                        <i class="bi bi-plus-circle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-nature">
+              <div class="gallery-card">
+                <div class="gallery-img">
+                  <img src="assets/img/gallery/gallery-5.webp" class="img-fluid" alt="Gallery Image" loading="lazy">
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h4>Natural Wonders</h4>
+                      <p>Cras mattis consectetur purus sit amet fermentum.</p>
+                      <a href="assets/img/gallery/gallery-5.webp" class="glightbox gallery-link" data-gallery="gallery-images">
+                        <i class="bi bi-plus-circle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-architecture">
+              <div class="gallery-card">
+                <div class="gallery-img">
+                  <img src="assets/img/gallery/gallery-6.webp" class="img-fluid" alt="Gallery Image" loading="lazy">
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h4>Historic Buildings</h4>
+                      <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <a href="assets/img/gallery/gallery-6.webp" class="glightbox gallery-link" data-gallery="gallery-images">
+                        <i class="bi bi-plus-circle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-people">
+              <div class="gallery-card">
+                <div class="gallery-img">
+                  <img src="assets/img/gallery/gallery-7.webp" class="img-fluid" alt="Gallery Image" loading="lazy">
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h4>Community Events</h4>
+                      <p>Donec ullamcorper nulla non metus auctor fringilla.</p>
+                      <a href="assets/img/gallery/gallery-7.webp" class="glightbox gallery-link" data-gallery="gallery-images">
+                        <i class="bi bi-plus-circle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-travel">
+              <div class="gallery-card">
+                <div class="gallery-img">
+                  <img src="assets/img/gallery/gallery-8.webp" class="img-fluid" alt="Gallery Image" loading="lazy">
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h4>Exotic Locations</h4>
+                      <p>Sed posuere consectetur est at lobortis.</p>
+                      <a href="assets/img/gallery/gallery-8.webp" class="glightbox gallery-link" data-gallery="gallery-images">
+                        <i class="bi bi-plus-circle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+          </div><!-- End Gallery Container -->
+        </div>
+
+      </div>
+
+
+
+
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">ResQMe</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>ResQMe@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+document.querySelectorAll('.qr-card-item').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.qr-card-item').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+
+    const type = card.dataset.type;
+    document.getElementById('selectedCardType').value = type;
+    document.getElementById('cardPreviewFrame').src = `cards/card_${type}.php`;
+  });
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    new Swiper('.qr-theme-slider', {
+      loop: true,
+      spaceBetween: 40,
+      centeredSlides: true,
+      slidesPerView: 1,
+      grabCursor: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }
+    });
+  });
+</script>
+
+</body>
+
+</html>
